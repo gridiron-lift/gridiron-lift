@@ -68,7 +68,7 @@
 		body { color: var(--text-color); }
 		h1, h2, h3 { font-family: "Tungsten-Medium", "Impact", sans-serif;  text-transform: uppercase; }
 		h1 { color: #FFF; font-size: clamp(5rem, 10vw, 8.125rem); line-height: 0.9; }
-		h2 { font-size: clamp(3rem, 10vw, 4.5rem); line-height: 1.1; }
+		h2 { font-size: clamp(3.75rem, 6.75vw, 4.5rem); line-height: 1.1; }
 		h5 { font-size: 1.25rem; font-family: "Vitesse",serif; color: var(--text-color); line-height: 1.75; }
 		p,li { font-family: "Vitesse",serif; color: var(--text-color); line-height: 1.625; margin-bottom: 1.5rem; }
 		h5 strong, p strong, p b { font-family: "Vitesse-Bold", serif; }
@@ -81,6 +81,11 @@
 			  .top-nav ul li a:focus { background-color: var(--primary-color); }
 		.gic-logo { max-width: 8.75rem; }
 		
+		@media (max-width:40rem) {
+			.top-nav ul { display: none; }
+			.gic-logo { max-width: 5.625rem; }
+		}
+		
 		.section-content { max-width: var(--content-width); margin: auto; }
 		.fit-image { object-fit: cover; position: absolute;
 		  left: 0;
@@ -89,14 +94,14 @@
 		  height: 100%; }
 		
 		.colibri-banner { background-color: var(--primary-color); }
-		.colibri-wrapper { display: grid; grid-template-columns: 43% 53.5%; max-width: 90rem; margin: 0 auto 12.5rem; column-gap: 3.5%; }
+		.colibri-wrapper { display: grid; grid-template-columns: 43% 53.5%; max-width: 90rem; margin: 0 auto 6.5rem; column-gap: 3.5%; }
 		.colibri-banner-content { display: flex; flex-direction: row; justify-content: flex-end; }
 		.cb-colibri-logo { margin-top: 2.75rem; fill:#FFF; width: 6.25rem; margin-bottom: 2rem; }
 		.cb-inner { width: 78.5%; }
 		  .cb-inner p { color: #FFF; font-size: 1.25rem; }
 		
 		.banner-logos { display: flex; column-gap: 1.75rem; margin-bottom: 3.5rem; }
-		.banner-partner { max-width: 10.375rem; }
+		.banner-partner {width:100%; max-width: 10.375rem; }
 		.banner-wwp {}
 		.banner-woodruff {}
 		
@@ -106,14 +111,16 @@
 		@media (max-width:72rem) {
 		  .cb-inner { width: calc(100% - 1.5rem); }
 		}
-		.colibri-banner-imgs { margin-bottom:-12.5rem; }
+		.colibri-banner-imgs { margin-bottom:-12.5rem; display: block; }
+		.colibri-banner-imgs-mobile { display:none; }
 		.banner-img-wrapper { display: grid; grid-template-columns: 1rem 1rem 3rem 4rem 1fr auto; grid-template-rows: 6rem 4rem 5rem 7rem 3rem; }
 		  .banner-img-wrapper .biw  { object-fit: cover; }
 		  .biw-1 { grid-column: 1 / 4; grid-row: 1 / 2; }
 		  
 		@media (max-width:40rem) {
 		  .colibri-wrapper { grid-template-columns: auto;  }
-		  .colibri-banner-imgs { margin: 0 1.5rem -6.5rem; }
+		  .colibri-banner-imgs { display: none; }
+		  .colibri-banner-imgs-mobile { display: block; margin: 0 1.5rem -6.5rem; }
 		}
 		.about-scholarship { background-color: rgb(246,246,246); max-width: var(--content-width); margin: -4rem auto 0; }
 		.as-wrapper { display: grid; grid-template-columns: 48% 52%; }
@@ -198,14 +205,14 @@
 		.partners h2 { margin-top: 4rem; margin-bottom: 3rem; }
 		.partners-scroll .section-content { overflow: scroll; padding-bottom: 5rem; }
 
-		.partners-flex { display: flex; align-content: stretch; width: 72rem; }
+		.partners-flex { display: flex; align-content: stretch; width: 72rem; column-gap: 1.5rem; }
 		.partner-gridiron, 
 		.partner-woodruff,
 		.partner-wounded { height: 4.0625rem; filter: grayscale(1); }
 		.partner-wounded { opacity: 0.8; }
-		.partners-exp { margin-top: 1.9rem; max-width: 86%; margin-bottom: 3rem; }
+		.partners-exp { margin-top: 1.7rem; max-width: 90%; margin-bottom: 3rem; }
 		.pflex { display: grid; align-content: space-between; }
-		.pflex a { font-family: "Vitesse-Bold",serif; color: var(--primary-color); transition: var(--transition); }
+		.pflex a { font-family: "Vitesse-Bold",serif; color: var(--primary-color); transition: var(--transition); font-size: 0.875rem; }
 			.pflex p a span { transition: var(--transition); display: inline-block; }
 			.pflex a:hover,
 			.pflex a:focus { color: var(--text-color); }
@@ -217,6 +224,10 @@
 		  width: 100%;
 		  height: 100%;
 		  object-fit: cover; }
+		
+		
+		.faq { margin-top: 4rem; }
+		.faq h2 { margin-bottom: 3rem; }
 	
 		footer { max-width: var(--content-width); border-top: 2px solid var(--text-color); margin: 5.5rem auto; }
 		.footer-container { display: grid; grid-template-columns: 60% 40%; column-gap: 10%; }
@@ -246,12 +257,13 @@
 		}
 		@media (max-width:40rem) { 
 			.footer-container { grid-template-columns: auto; }
-			.mobile_footer_cta { display: block; z-index: 99999; background-color: #FFF; text-align: center; text-transform: uppercase; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem 1.5rem 1.25rem; }
+			.mobile_footer_cta { display: block; z-index: 99999; background-color: #FFF; text-align: center; text-transform: uppercase; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem 1.5rem 1.25rem; -webkit-box-shadow: 0px -5px 10px -5px rgba(0,0,0,0.2); 
+				box-shadow: 0px -5px 10px -5px rgba(0,0,0,0.2); }
 			.mobile_footer_cta p { font-size: 0.75rem; margin-bottom: 0.75rem; }
-			.mobile_footer_cta a { width: 100%; max-width: 21.25rem; color: #FFF; background-color: var(--text-color); text-transform: uppercase; font-size: 1.126rem; font-family: "Vitesse-Bold",serif; display: block; padding-top: 0.825rem; padding-bottom: 0.8rem; transition: var(--transition); }
+			.mobile_footer_cta a { width: 100%; max-width: 21.25rem; color: #FFF; background-color: var(--text-color); text-transform: uppercase; font-size: 1.126rem; font-family: "Vitesse-Bold",serif; display: block; padding-top: 0.825rem; padding-bottom: 0.8rem; transition: var(--transition); margin: auto; }
 		}
 		
-		#tabs { display: block; }
+		#tabs { display: flex; }
 		#accordion { display: none; }
 		.ui-widget.ui-widget-content {
 			border: none !important;
@@ -264,10 +276,10 @@
 			color: inherit !important;
 		}
 		.ui-widget-header { border: none !important; background-color: #FFF !important; color: var(--text-color) !important; font-weight: normal !important; }
-		.ui-tabs-vertical {  }
+		.ui-tabs .ui-tabs-nav .ui-tabs-anchor { padding: .65rem 2rem 0.65rem 0 !important; }
 		  .ui-tabs-vertical .ui-tabs-nav { float: left; width: 18rem; }
 		  .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-right: 1px solid var(--text-color) !important; margin: 0 -5px 0 0; white-space:normal; }
-		  .ui-tabs-vertical .ui-tabs-nav li a { display:block; font-family: "Vitesse",serif; font-size: 1rem; }
+		  .ui-tabs-vertical .ui-tabs-nav li a { display:block; font-family: "Vitesse",serif; font-size: 1rem; line-height: 1.4; }
 		  .ui-tabs-vertical .ui-tabs-nav li a:hover,
 		  .ui-tabs-vertical .ui-tabs-nav li a:focus { color: var(--primary-color) !important; }
 		  .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 5px !important; }
@@ -275,12 +287,25 @@
 		  .ui-state-active a, 
 		  .ui-state-active a:link, 
 		  .ui-state-active a:visited { color: var(--text-color) !important; font-family: "Vitesse-Bold",serif !important; }
-		  .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+		  
+		  
+		  .ui-tabs-vertical .ui-tabs-panel { width: 100%; max-width: 40.5rem; padding: 0 !important; margin-left: 6%; margin-top: 2rem; }
+		  .ui-tabs-panel h3 { font-family: "Tungsten-Semibold",sans-serif; font-size: 3rem; line-height: 1.05; margin-bottom: 1.25rem; }
 		  
 		  @media (max-width:40rem) { 
 			  #tabs { display: none; }
 			  #accordion { display: block; }
 		  }
+		  
+		  .ui-accordion .ui-accordion-header { font-family: "Vitesse-Bold",serif; font-size: 1.125rem; border:1px solid var(--text-color) !important; border-radius: 0.5rem !important; margin-top: 1.25rem; display: flex; flex-direction: row-reverse;
+		  align-content: center;
+		  align-items: center; padding: 0.9rem 0.5rem 0.7rem 1rem;
+		  justify-content: space-between; gap: 1rem; }
+		  .ui-accordion .ui-accordion-header.ui-state-active { border-radius: 0.5rem 0.5rem 0 0 !important; }
+		  
+		  .ui-accordion .ui-accordion-content { border-style: solid; border-color: var(--text-color) !important; border-width: 0 1px 1px 1px !important; border-radius: 0 0 0.5rem 0.5rem !important; padding: 1rem 1rem 0 !important; }
+		  .ui-icon { margin-top: 0 !important; }
+		  .ui-state-active .ui-icon, .ui-button:active .ui-icon { background-image: url('https://code.jquery.com/ui/1.13.1/themes/base/images/ui-icons_444444_256x240.png'); }
 		</style>
 		
 		
@@ -311,6 +336,12 @@
 					<picture>
 					  <source srcset="images/banner-img.webp" type="image/webp">
 					  <img src="images/banner-img.png" alt="grid of images">
+					</picture>
+				</div>
+				<div class="colibri-banner-imgs-mobile">
+					<picture>
+					  <source srcset="images/banner-mobile.webp" type="image/webp">
+					  <img src="images/banner-mobile.png" alt="grid of images"  >
 					</picture>
 				</div>
 			</div>
@@ -469,15 +500,34 @@
 				</div> <!-- end TABS -->
 				
 				<div id="accordion">
-					<h3>faq_title</h3>
+					<h3>What's included in the scholarship?</h3>
 					<div>
-						<h3>faq_title</h3>
-						<p>faq_answer</p>
+						<p>Colibri’s Real Estate Express (REX) is the country's leading online school for real estate and broker licensing education. Recipients of this scholarship will get access to the Real Estate Express Ultimate learning package. It includes required pre-licensing real estate education courses, state-approved instructor support, exam prep, exam cram webinar and video, real estate dictionary, instructor Q&A, printed course textbook, quarterly livestream support, and a one-year professional development membership.</p>
 					</div>
-					<h3>faq_title2</h3>
+					<h3>What can recipients expect from the scholarship?</h3>
 					<div>
-						<h3>faq_title2</h3>
-						<p>faq_answer</p>
+						<p>This scholarship helps veterans meet their state’s real estate licensing requirements and prepares them to take the licensing exams to become real estate agents.</p>
+						<p>REX has helped millions of students start flourishing new careers, and this scholarship program provides a great opportunity for veterans to achieve this milestone with zero out-of-pocket expense for their education.</p>
+					</div>
+					<h3>How are winners selected?</h3>
+					<div>
+						<p>Each foundation will send a list of 500 winners to Colibri. In total, 1,000 recipients will receive a welcome email with a link to the Real Estate Express website, along with a promo code to redeem their free course.</p>
+					</div>
+					<h3>How do winners redeem their free course?</h3>
+					<div>
+						<p>Winners will visit the scholarship landing page via the link sent to them in the congratulatory email. From there, they will be directed to a private landing page on the Real Estate Express website, where they will select their state and package, then proceed to checkout to waive the fee and register for their course.</p>
+					</div>
+					<h3>How do winners start their course?</h3>
+					<div>
+						<p>After redeeming their promo code and completing registration, winners will be able to access and start their course from their student dashboard.</p>
+					</div>
+					<h3>Where is this scholarship available?</h3>
+					<div>
+						<p>The scholarship is only available in the 38 states where Real Estate Express and their sister companies offer online education: ​​AL, AK, AZ, AR, CA, CO, DC, FL, GA, HI, IL, IN, IA, KS, KY, LA, MD, MA, MI, MN, MS, MO, MT, NE, NV, NJ, NY, OH, OK, PA, SC, TN, TX, VT, VA, WA, WI, and WY.</p>
+					</div>
+					<h3>What if Real Estate Express is not available in my state?</h3>
+					<div>
+						<p>If you live in a state where one of our sister brands offer courses (AZ, NC, NV, OH), we will contact you to help you get set up with an equivalent course/learning package.</p>
 					</div>
 				</div><!-- end ACCORDION -->
 				
@@ -517,7 +567,12 @@
 		  $(function(){
 			  $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
 			  $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
-			  $("#accordion").accordion({ heightStyle:"content" });
+			  var icons = {
+				  header: "ui-icon-plus",
+				  activeHeader: "ui-icon-minus"
+				};
+			  $("#accordion").accordion({ heightStyle:"content",icons: icons });
+			  
 		  });
 		  
 			const swiper = new Swiper('.swiper', {
