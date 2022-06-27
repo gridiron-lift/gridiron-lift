@@ -17,7 +17,7 @@
 		*, *::before, *::after { box-sizing: border-box; }
 		a, button { cursor: revert; }
 		ol, ul, menu { list-style: none; }
-		img { max-width: 100%; }
+		img { width: auto; max-width: 100%; height: auto; }
 		table { border-collapse: collapse; }
 		textarea { white-space: revert; }
 		meter { -webkit-appearance: revert; appearance: revert; }
@@ -127,6 +127,9 @@
 		.as-content { padding: 3.875rem 3.875rem 2rem; }
 		  .as-content h2 { margin-bottom: 1.25rem; }
 		.as-image { position: relative; margin-top: 4rem; }
+		@media (max-width:70rem) {
+			.as-content { padding: 3.5rem 1.5rem 2rem; }
+		}
 		@media (max-width:40rem) {
 			.as-wrapper { grid-template-columns: auto; }
 			.as-content { padding: 3.5rem 1.5rem 0; }
@@ -327,15 +330,15 @@
 						<h1>The Gridiron Veterans Scholarship</h1>
 						<p>Helping Veterans Launch Successful Careers in Real Estate.</p>
 						<div class="banner-logos">
-							<img src="images/wounded-warrior-banner.png" alt="Wounded Warrior Project" class="banner-partner banner-wwp" /> 
-							<img src="images/bob-woodruff-banner.png" alt="Bob Woodruff Foundation" class="banner-partner banner-woodruff" />
+							<img src="images/wounded-warrior-banner.png" alt="Wounded Warrior Project" class="banner-partner banner-wwp" width="340" height="92" /> 
+							<img src="images/bob-woodruff-banner.png" alt="Bob Woodruff Foundation" class="banner-partner banner-woodruff" width="340" height="92" />
 						</div>
 					</div>
 				</div>
 				<div class="colibri-banner-imgs">
 					<picture>
 					  <source srcset="images/banner-img.webp" type="image/webp">
-					  <img src="images/banner-img.png" alt="grid of images">
+					  <img src="images/banner-img.png" alt="grid of images" width="900" height="853">
 					</picture>
 				</div>
 				<div class="colibri-banner-imgs-mobile">
@@ -408,7 +411,7 @@
 				<div class="partners-flex">
 					<div class="pflex">
 						<div class="partner-em1">
-							<img src="images/Gridiron_Capital_Logo.jpeg" alt="Gridiron Capital" class="partner-gridiron" />
+							<img src="images/Gridiron_Capital_Logo.jpeg" alt="Gridiron Capital" class="partner-gridiron" width="176" height="65" />
 							<p class="partners-exp"><strong>Gridiron Capital</strong> partners with founders, entrepreneurs, and management teams to create value by building middle-market companies into industry-leaders.</p>
 						</div>
 						<p><a href="https://gridironcapital.com/" target="_blank" rel="noopener">Learn more <span>&rarr;</span></a></p>
@@ -422,7 +425,7 @@
 					</div>
 					<div class="pflex">
 						<div class="partner-em1">
-							<img src="images/wounded-warrior-project-partner.png" alt="Wounded Warrior Project" class="partner-wounded" />
+							<img src="images/wounded-warrior-project-partner.png" alt="Wounded Warrior Project" width="279" height="65" class="partner-wounded" />
 							<p class="partners-exp"><strong>The Wounded Warrior Project&reg;</strong> is a nonprofit organization that offers a variety of programs, services and support to empower veterans and active duty service members.</p>
 						</div>
 						<p><a href="https://www.woundedwarriorproject.org/" target="_blank" rel="noopener">Learn more <span>&rarr;</span></a></p>
@@ -431,7 +434,7 @@
 						<div class="partner-em1">
 							<picture>
 							  <source srcset="images/bob-woodruff-foundation-partner.webp" type="image/webp">
-							  <img src="images/bob-woodruff-foundation-partner.jpeg" alt="Bob Woodruff Foundation" class="partner-woodruff" />
+							  <img src="images/bob-woodruff-foundation-partner.jpeg" alt="Bob Woodruff Foundation" class="partner-woodruff" width="238" height="65" />
 							</picture>
 							<p class="partners-exp"><strong>The Bob Woodruff Foundation</strong> is a nonprofit that helps ensure injured service members, veterans, and their families return to a home front ready to support them.</p>
 						</div>
