@@ -81,9 +81,14 @@
 			  .top-nav ul li a:focus { background-color: var(--primary-color); }
 		.gic-logo { max-width: 8.75rem; }
 		
+		@media screen and (max-width:75rem) {
+		  .top-nav { max-width: calc(100vw - 3rem); }
+		}
+		
 		@media (max-width:40rem) {
+			.top-nav { max-width: 100vw; width: 100vw; position: fixed; background: white; -webkit-box-shadow: 0px 3px 10px -3px rgb(0 0 0 / 20%); box-shadow: 0px 3px 10px -3px rgb(0 0 0 / 20%); z-index: 9; }
 			.top-nav ul { display: none; }
-			.gic-logo { max-width: 5.625rem; }
+			.gic-logo { max-width: 5.625rem; margin-left: 1.5rem; }
 		}
 		
 		.section-content { max-width: var(--content-width); margin: auto; }
@@ -118,22 +123,26 @@
 		  .biw-1 { grid-column: 1 / 4; grid-row: 1 / 2; }
 		  
 		@media (max-width:40rem) {
+			.colibri-banner { padding-top: 3rem; }
 		  .colibri-wrapper { grid-template-columns: auto;  }
 		  .colibri-banner-imgs { display: none; }
 		  .colibri-banner-imgs-mobile { display: block; margin: 0 1.5rem -6.5rem; }
+		  .cb-inner p { margin-top: 1rem; }
 		}
 		.about-scholarship { background-color: rgb(246,246,246); max-width: var(--content-width); margin: -4rem auto 0; }
 		.as-wrapper { display: grid; grid-template-columns: 48% 52%; }
 		.as-content { padding: 3.875rem 3.875rem 2rem; }
 		  .as-content h2 { margin-bottom: 1.25rem; }
 		.as-image { position: relative; margin-top: 4rem; }
+			.as-image img { background-position: left center; }
 		@media (max-width:70rem) {
 			.as-content { padding: 3.5rem 1.5rem 2rem; }
 		}
 		@media (max-width:40rem) {
 			.as-wrapper { grid-template-columns: auto; }
-			.as-content { padding: 3.5rem 1.5rem 0; }
+			.as-content { padding: 8.5rem 1.5rem 0; }
 			.as-image { height: 55vh; margin-top: 2rem; }
+			.about-scholarship { margin: -7rem auto 0; }
 		}
 		.express { padding-top: 4.5rem; padding-bottom: 5rem; }
 		  .express h5 { width: 65%; margin-bottom: 2rem; }
@@ -203,7 +212,11 @@
 		   content: url('images/es-arrow.svg');
 		 }
 		
-		
+		@media (max-width:40rem){
+			.experience-step-container { min-width: 60rem; }
+			.experience-step { padding: 2rem; }
+			.step-count-connect:after { width: 240px; }
+		}
 		
 		.partners h2 { margin-top: 4rem; margin-bottom: 3rem; }
 		.partners-scroll .section-content { overflow: scroll; padding-bottom: 5rem; }
@@ -254,7 +267,6 @@
 		.mobile_footer_cta { display: none; }	
 			
 		@media screen and (max-width:75rem) {
-		  .top-nav,
 		  .section-content,
 		  footer { max-width: calc(100vw - 3rem); }
 		}
@@ -300,15 +312,31 @@
 			  #accordion { display: block; }
 		  }
 		  
-		  .ui-accordion .ui-accordion-header { font-family: "Vitesse-Bold",serif; font-size: 1.125rem; border:1px solid var(--text-color) !important; border-radius: 0.5rem !important; margin-top: 1.25rem; display: flex; flex-direction: row-reverse;
+		  .ui-accordion .ui-accordion-header { font-family: "Vitesse-Bold",serif; font-size: 1.125rem; border:1px solid var(--text-color) !important; border-radius: 0.5rem !important; margin-top: 1.25rem; display: grid;
 		  align-content: center;
-		  align-items: center; padding: 0.9rem 0.5rem 0.7rem 1rem;
-		  justify-content: space-between; gap: 1rem; }
+		  align-items: center;
+		  padding: 0.9rem 0.5rem 0.7rem 1rem;
+		  gap: 1rem;
+		  justify-content: space-between;
+		  grid-template-columns: 1fr auto; }
 		  .ui-accordion .ui-accordion-header.ui-state-active { border-radius: 0.5rem 0.5rem 0 0 !important; }
 		  
 		  .ui-accordion .ui-accordion-content { border-style: solid; border-color: var(--text-color) !important; border-width: 0 1px 1px 1px !important; border-radius: 0 0 0.5rem 0.5rem !important; padding: 1rem 1rem 0 !important; }
-		  .ui-icon { margin-top: 0 !important; }
-		  .ui-state-active .ui-icon, .ui-button:active .ui-icon { background-image: url('https://code.jquery.com/ui/1.13.1/themes/base/images/ui-icons_444444_256x240.png'); }
+		  .ui-icon { margin-top: 0 !important; 
+			  width: 17px;
+			  height: 17px; grid-column: 2 / 3;
+			  grid-row: 1 / 2;
+		  }
+		  .ui-icon, .ui-widget-content .ui-icon {
+			  background-image: url('images/accordion.jpg');
+		  }
+		  .ui-icon-plus {
+			  background-position: 0 0;
+		  }
+		  .ui-state-active .ui-icon, .ui-button:active .ui-icon { background-image: url('images/accordion.jpg'); }
+		  .ui-icon-minus {
+			  background-position: -17px 0;
+		  }
 		</style>
 		
 		
@@ -344,7 +372,7 @@
 				<div class="colibri-banner-imgs-mobile">
 					<picture>
 					  <source srcset="images/banner-mobile.webp" type="image/webp">
-					  <img src="images/banner-mobile.png" alt="grid of images"  >
+					  <img src="images/banner-mobile.png" alt="grid of images" width="550" height="446" >
 					</picture>
 				</div>
 			</div>
@@ -357,7 +385,7 @@
 					<p>The Gridiron Veterans Scholarship is our way of giving back to those who have given so much to our country. <strong>Gridiron Capital</strong> and <strong>Colibri</strong> are teaming up with <strong>Wounded Warrior Project&reg;</strong> and <strong>The Bob Woodruff Foundation</strong> to offer 1,000 of America’s veterans a life-changing opportunity to forge a successful new career in the real estate sector.</p>
 				
 				</div>
-				<div class="as-image"><img src="https://source.unsplash.com/900x1200" class="fit-image" /></div>
+				<div class="as-image"><img src="images/veteran-scholarship.jpeg" class="fit-image" /></div>
 			</div>
 		</section>
 		<section class="express">
@@ -365,9 +393,9 @@
 				<h2>About Real Estate Express</h2>
 				<h5><strong>Real Estate Express</strong> is the country's leading online school for real estate and broker licensing education.</h5>
 				<div class="express-grid">
-					<div class="eg-1"><img src="https://source.unsplash.com/500x900" class="fit-image" /></div>
+					<div class="eg-1"><img src="images/wwp-veteran.jpeg" class="fit-image" /></div>
 					<div class="eg-2 eg-stats"><h3>47+</h3><p>Industry expert<br> instructors</p></div>
-					<div class="eg-3"><img src="https://source.unsplash.com/300x200" class="fit-image" /></div>
+					<div class="eg-3"><img src="images/online-courses-gridiron.jpeg"  class="fit-image" /></div>
 					<div class="eg-4 eg-stats"><h3>25+</h3><p>years perfecting<br>our courses</p></div>
 					<div class="eg-5"><p>"Best thing I've done for my career. I was working full time and wanted to transition into real estate. The online process made it possible."</p><p class="eg-5-byline">Matthew F.<br>Texas</p></div>
 					<div class="eg-6 eg-stats"><h3>4.4</h3><p>rating out<br>of 5 stars</p></div>
@@ -446,13 +474,17 @@
 		<div class="carousel">
 			<div class="swiper">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="https://source.unsplash.com/620x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/800x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/415x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/604x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/290x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/530x530" /></div>
-					<div class="swiper-slide"><img src="https://source.unsplash.com/900x530" /></div>
+					<div class="swiper-slide"><img src="images/slider-1.jpg" width="592" height="530" alt="Man at Computer" /></div>
+					<div class="swiper-slide"><img src="images/slider-5.jpg" width="822" height="530" alt="People Talking Outside" /></div>
+					<div class="swiper-slide"><img src="images/slider-10.jpg" width="390" height="530" alt="Woman at Computer" /></div>
+					<div class="swiper-slide"><img src="images/slider-15.jpg" width="691" height="530" alt="Men at Seminar" /></div>
+					<div class="swiper-slide"><img src="images/slider-20.jpg" width="352" height="530" alt="Man Posing By Flag" /></div>
+					<div class="swiper-slide"><img src="images/slider-40.jpg" width="659" height="530" alt="Men Talking Outside" /></div>
+					<div class="swiper-slide"><img src="images/slider-50.jpg" width="462" height="530" alt="Women Outside" /></div>
+					<div class="swiper-slide"><img src="images/slider-60.jpg" width="796" height="530" alt="People Talking Outside" /></div>
+					<div class="swiper-slide"><img src="images/slider-75.jpg" width="722" height="530" alt="Couple Posing with Dog" /></div>
+					<div class="swiper-slide"><img src="images/slider-80.jpg" width="435" height="530" alt="Man at Computer" /></div>
+					<div class="swiper-slide"><img src="images/slider-90.jpg" width="794" height="530" alt="Women at Expo" /></div>
 				</div>
 			</div>
 		</div>
